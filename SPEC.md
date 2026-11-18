@@ -52,6 +52,11 @@ mechanical: everything in `raw/` is untouchable by definition.
    Context. Treat evidence gathered before the gap as stale.
 10. **Secret values never enter the vault.** Store references ("the key lives in X"), never values.
 11. **Confirm before money, messages, deletion, or anything public.**
+12. **Write for a person who acts on what they read.** Default style: about 80% of the way to
+    ASD-STE100 (Simplified Technical English) — short active sentences, one action per sentence,
+    simple verbs, the same word for the same thing every time, answer first. Rule files and code
+    comments are exempt. Tier 1 injects it with `style-context.cjs`; other tiers put it in their
+    rules or instructions.
 
 ## 5. The gate
 
@@ -74,6 +79,6 @@ Runs at the end of every turn. Detects real events: a commit, a file edit, or a 
 | `hook-lint` | Any edit to a hook or settings file is syntax-checked; failure goes back to the agent. |
 | `git-guard` + `pre-commit` | Secret scan before every commit; `.env` never committed. |
 | `git-checkpoint` | Every repo committed at each checkpoint; push only if configured. |
-| `style-context` | The user's writing register is injected into every session. |
+| `style-context` | The writing style (default: ASD-STE100-lite, from `~/.claude/style.txt`) is injected into every session. |
 | `broadcast` | One machine-wide notice pushed into every project's Context, idempotently. |
 | `memory-size-check` | Warns when the agent's memory index grows too big to load. |

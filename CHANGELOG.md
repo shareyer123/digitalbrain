@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.2.1 — 2026-11-18
+- The ASD-STE100 writing style now reaches every tier: added to the BOOTSTRAP ritual block, the
+  Tier 2 steps, the must-keep rules, SPEC rule 12 and the README. Before, only Claude Code got it.
+
 ## v1.2 — 2026-11-18
 - **First public release.** Adds `BOOTSTRAP.md` (agent self-install by platform tier) and `SPEC.md`.
 - **Daily sync nudge** on every turn (`devlog-watch.sh`) + `daily-sync-done.sh` to stamp it.

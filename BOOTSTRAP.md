@@ -69,7 +69,11 @@ them, then rebuild each piece in your platform's terms.
 3. **Build the gate.** If your platform has hooks, port `hooks/devlog-watch.sh` (the Stop hook) and
    `hooks/raw-guard.cjs` (the write guard). If it has no hooks, adopt the self-check in Step 3 as a
    rule in your rules file.
-4. **Port the git layer** if you write code: commit at every checkpoint, scan for secrets before
+4. **Adopt the writing style.** Copy the text of `claude-code/<os>/hooks/style.txt` into your
+   rules file. It tells you to write about 80% of the way to ASD-STE100 (Simplified Technical
+   English). If your platform has a session-start hook, inject it there instead, as
+   `style-context.cjs` does.
+5. **Port the git layer** if you write code: commit at every checkpoint, scan for secrets before
    every commit (`hooks/git-template/hooks/pre-commit` is a plain git hook; it works for any agent).
 
 ## Step 2c — Tier 3: chat-only agent
@@ -101,6 +105,10 @@ DIGITALBRAIN — RITUAL MODE
 7. END: when the user says end, re-state (never copy) every blocker with a fresh stamp, write the
    next action, and summarise the session in five lines.
 8. Money, messages, deletions and anything public: confirm with the user first, every time.
+9. WRITING STYLE: write to the user about 80% of the way to ASD-STE100 (Simplified Technical
+   English). Short active sentences. One action per sentence. Simple verbs (use, start, before;
+   not utilize, commence, prior to). The same word for the same thing every time. Answer first.
+   The user reads on a phone and acts on what they read. This is a style, not a word limit.
 ```
 
 ---
@@ -136,3 +144,5 @@ Tell your user, in this order:
 - **Blockers survive only by being re-stated** with a fresh stamp. No append-only task lists.
 - **Never store secret values** in the vault or memory. Store where the secret lives, not the value.
 - **Confirm before money, messages, deletion, or anything public.**
+- **Write in the DigitalBrain style:** about 80% of the way to ASD-STE100 (Simplified Technical
+  English). Short active sentences, one action each, simple verbs, same word for the same thing.

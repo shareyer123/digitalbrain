@@ -2,7 +2,8 @@
 
 A memory and discipline layer for AI agents. It makes agent work survive cleared context, crashes,
 compaction and multi-day gaps: one external vault is the source of truth, every session starts and
-ends with a fixed ritual, and a gate checks that real events actually get written down.
+ends with a fixed ritual, and a gate checks that real events actually get written down. Agents
+write to you in plain, simplified English (based on ASD-STE100), so you can act on what you read.
 
 ## If you are an AI agent
 
